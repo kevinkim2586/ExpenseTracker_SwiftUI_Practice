@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		7C8C4FD727F035350071B426 /* SwiftUIFontIcon in Frameworks */ = {isa = PBXBuildFile; productRef = 7C8C4FD627F035350071B426 /* SwiftUIFontIcon */; };
 		7C8C4FD927F036670071B426 /* TransactionListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C8C4FD827F036670071B426 /* TransactionListViewModel.swift */; };
+		7C8C4FDB27F03A210071B426 /* RecentTransactionList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C8C4FDA27F03A210071B426 /* RecentTransactionList.swift */; };
 		7CD9F97D27ECBADA00D9CB7B /* ExpenseTracker_SwiftUI_PracticeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD9F97C27ECBADA00D9CB7B /* ExpenseTracker_SwiftUI_PracticeApp.swift */; };
 		7CD9F97F27ECBADA00D9CB7B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD9F97E27ECBADA00D9CB7B /* ContentView.swift */; };
 		7CD9F98127ECBADB00D9CB7B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7CD9F98027ECBADB00D9CB7B /* Assets.xcassets */; };
@@ -21,6 +22,7 @@
 
 /* Begin PBXFileReference section */
 		7C8C4FD827F036670071B426 /* TransactionListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionListViewModel.swift; sourceTree = "<group>"; };
+		7C8C4FDA27F03A210071B426 /* RecentTransactionList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentTransactionList.swift; sourceTree = "<group>"; };
 		7CD9F97927ECBADA00D9CB7B /* ExpenseTracker_SwiftUI_Practice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExpenseTracker_SwiftUI_Practice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CD9F97C27ECBADA00D9CB7B /* ExpenseTracker_SwiftUI_PracticeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseTracker_SwiftUI_PracticeApp.swift; sourceTree = "<group>"; };
 		7CD9F97E27ECBADA00D9CB7B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -65,6 +67,7 @@
 			children = (
 				7CD9F97C27ECBADA00D9CB7B /* ExpenseTracker_SwiftUI_PracticeApp.swift */,
 				7CD9F97E27ECBADA00D9CB7B /* ContentView.swift */,
+				7C8C4FDA27F03A210071B426 /* RecentTransactionList.swift */,
 				7CD9F99027ECBEF300D9CB7B /* TransactionRow.swift */,
 				7C8C4FD827F036670071B426 /* TransactionListViewModel.swift */,
 				7CD9F98C27ECBDAC00D9CB7B /* TransactionModel.swift */,
@@ -161,6 +164,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7CD9F98F27ECBE6400D9CB7B /* PreviewData.swift in Sources */,
+				7C8C4FDB27F03A210071B426 /* RecentTransactionList.swift in Sources */,
 				7CD9F98D27ECBDAC00D9CB7B /* TransactionModel.swift in Sources */,
 				7CD9F97F27ECBADA00D9CB7B /* ContentView.swift in Sources */,
 				7CD9F99127ECBEF300D9CB7B /* TransactionRow.swift in Sources */,
