@@ -9,7 +9,9 @@ import SwiftUI
 import SwiftUICharts
 
 struct ContentView: View {
-    var demoData: [Double] = [8, 2, 4, 6, 12, 9, 2]
+    
+    @EnvironmentObject var transactionListVM: TransactionListViewModel
+    
     var body: some View {
         NavigationView {
             ScrollView {
@@ -20,27 +22,31 @@ struct ContentView: View {
                     
                     
                     //MARK: - Chart
-//                    
-//                    CardView {
-////                        ChartLabel("$900", type: .title)
-//                        
-//                        LineChart()
-//                    }
-//                    .data(demoData)
-//                    .chartStyle(
-//                        ChartStyle(
-//                            backgroundColor: Color.systemBackground,
-//                            foregroundColor: ColorGradient(
-//                                Color.icon.opacity(0.4),
-//                                Color.icon
-//                            )
-//                        )
-//                    )
-//
-//                    .frame(height: 300)
+                    let data = transactionListVM.accumulateTransactions()
                     
-                    
-                    
+                    if !data.isEmpty {
+                        
+                        let totalExpenses = data.last?.1 ?? 0
+                        
+                        CardView {
+                            VStack(alignment: .leading) {
+                                ChartLabel(totalExpenses.formatted(.currency(code: "USD")), type: .title, format: "$%.02f") 
+                                LineChart()
+                            }
+                        }
+                        .data(data)
+                        .chartStyle(
+                            ChartStyle(
+                                backgroundColor: Color.systemBackground,
+                                foregroundColor: ColorGradient(
+                                    Color.icon.opacity(0.4),
+                                    Color.icon
+                                )
+                            )
+                        )
+                        .frame(height: 300)
+                    }
+           
                     //MARK: - Transaction List
                     RecentTransactionList()
                 }
