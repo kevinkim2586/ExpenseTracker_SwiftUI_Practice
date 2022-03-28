@@ -8,13 +8,58 @@
 import SwiftUI
 
 struct TransactionList: View {
+    
+    @EnvironmentObject var transactionListViewModel: TransactionListViewModel
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        
+        VStack {
+            List {
+                
+                //MARK: - Transaction Groups
+                
+                ForEach(Array(transactionListViewModel.groupTransactionsByMonth()), id: \.key) { month, transactions in
+                    
+                    Section {
+                        //MARK: - Transaction List
+                        ForEach(transactions) { transaction in
+                            TransactionRow(transaction: transaction)
+                        }
+                    } header: {
+                        //MARK: - Transaction Month
+                        Text(month)
+                    }
+                    .listSectionSeparator(.hidden)
+
+                }
+                
+            }
+            .listStyle(.plain)
+        }
+        .navigationTitle("Transactions")
+        .navigationBarTitleDisplayMode(.inline)
     }
 }
 
 struct TransactionList_Previews: PreviewProvider {
+    
+    static let transactionListVM: TransactionListViewModel = {
+        let transactionListVM = TransactionListViewModel()
+        transactionListVM.transactions = transactionListPreviewData
+        return transactionListVM
+    }()
+    
     static var previews: some View {
-        TransactionList()
+        Group {
+            NavigationView {
+                TransactionList()
+            }
+            NavigationView {
+                TransactionList()
+                    .preferredColorScheme(.dark)
+            }
+        
+        }
+        .environmentObject(transactionListVM)
     }
 }
